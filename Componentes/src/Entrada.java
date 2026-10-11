@@ -18,7 +18,7 @@ public class Entrada {
         //variables:
             //según el dato que guarda: String:palabras, char:letras, int:numeros, double/float: decimales, boolean: true o false
         //definir una variable: tipo de dato, nombre y si quiere se les asigna un valor: String nombre ="Hello"
-        String nombreLegal="Borja";
+        String nombreLegal="Borja M";
         char letra = 'A';
         int edad= 41;
         double altura =1.65;
