@@ -1,58 +1,82 @@
+import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Scanner;
 
-/**
- * @author monica
- * @version 1.0
- */
 public class Entrada {
-    // aquí explicas BREVEMENTE algo para aclarar las ideas
-    // TODO en esta otra línea hago una aclaración diferente
-    /*
-    Este comentario administe unas cuántas lineas
-    Esta es una segunda línea
-     */
-    // TODO esta tarea la dejo pendiente para el lunes
-    // mod acceso retorna nombre (args) {funcionalidad}
-    public static void main (String [] args){
-        //variables:
-            //1. según el dato que guarda: String:palabras, char:letras, int:numeros, double/float: decimales, boolean: true o false
-            //2. según la forma de construirse: primitivo - valor (char, int, double), complejo - primera letra en mayúscula como funcionalidad
-                // un primitivo puede ser complejo si le llamo por su nombre completo ejemplo: char como Character
-                // para convertir un complejo en primitivo se escribe en minúscula la primera letra.
-            //3. según su mutabilidad del dato: si cambia o no/ mutables / no mutables (constantes - altura, dni, se le ponte la palabra final, siempre mayusculas).
-            //4. según el scope de la variable: según el metodo o clase.
-        //definir una variable: tipo de dato, nombre y si quiere se les asigna un valor: String nombre ="Hello"
-          // para definir una variable compleja es tipo de dato, nombre, new + tipo de dato y forma del valor
-        String nombreLegal="Borja";
-        final String DNI ="404703";
-        char letra = 'A';
-        Character letraCompleta ='a';
-        int edad= 41;
-        double altura =1.65;
-        boolean acierto = true;
-        //float alturaFloat = 1.74f;
-        // orders
-        System.out.println("Mi nombre es " +nombreLegal);
-        System.out.println("Mi dni es " +DNI);
-        System.out.println("La letra de mi DNI es " +letra);
-        System.out.println("La letra de mi DNI es " +letra);
-        System.out.println("El resultado de la evaluación es " +acierto);
-        String nombre="Hello";
-        System.out.println('a');
-        System.out.println("Hola mundo");
-        System.out.println(9*6);
-        System.out.println(7.98);
-        System.out.println(true);
-        System.out.println("Segunda linea");
-        System.out.println("Tercera linea\nCuarta linea\nQuinta Línea");
-        System.out.print("\tSextalinea\n");
-        System.out.println("La suma de "+9+" y "+6+" tiene como resultado " + (9+6));;
-        System.out.println(nombre.length());
-    }
-    /**
-     * @param arg explica el parametro
-     * @return explicate el retorno
-     */
-    public int metodo (String arg) { return 1;}
-}
 
+    public static void main (String[] args) {
+        System.out.println("Proyecto operadores");
+        Scanner lector = new Scanner(System.in);
+        System.out.println("Introduce tu  nombre");
+        String nombre = lector.nextLine();
+        System.out.println("Introduce el ciclo en el que esta matriculado");
+        String ciclo = lector.nextLine();
+        System.out.println("Nota que crees que sacarás al final del curso");
+        int nota = lector.nextInt();
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Ciclo: "+ciclo);
+        System.out.println("Nota = " + nota);
+        // OPERADORES = Realizar operaciones
+        // aritméticos: Operaciones matemáticas (depende del tipo de dato) UNARIAS ++-- en 1 Y BINARIAS + - * / %
+        int operando1=10;
+        int operando2=5;
+        operando1++;
+        operando1++;
+        operando1++;//13
+        operando2--;
+        operando2--;
+        operando2--;//2
+        operando2--;//1
+        int suma=operando1 + operando2;//15
+        int resta = operando1 - operando2; //11
+        int multiplicacion = operando1*operando2;//26
+        double division = (double) operando1/operando2; // 6.5
+        int resto = operando1%operando2; // 13%2 ->
+        System.out.println( "La suma " + suma);
+        System.out.println( "La resta " + resta);
+        System.out.println( "La multiplicación " + multiplicacion);
+        System.out.println( "La división " + division);
+        System.out.println("El resto " + resto);
+        operando1 = 10;
+        operando2 = 7;
+        System.out.println("La suma de los operandos es "+ (operando1+operando2));
+        String op1 ="5";
+        String op2 ="15";
+        System.out.println ("La suma de los ops es "+ (Integer.parseInt(op1)+Integer.parseInt(op2)));
+        // asignación
+        operando1=20;
+        operando2=10;
+        //operando1=operando1+14;//34
+        operando1 +=14;// operando1+14;34
+        operando1-=4; // 30
+        operando1 *=2; // 60
+        operando1 /=10; //6
+        operando1 *=operando2;// 60
+        operando1 %=2; //0
+        // relaci0onales (siempre obtengo un boolean) > >= < <= 1=
+        operando1= 10;
+        operando2= 15;
+        boolean comparacion = operando1>10; // false
+        comparacion = operando1>=10; // true
+        System.out.println("El resultado de la comparación es >= " +comparacion);
+        comparacion = operando2<operando1;
+        System.out.println("El resultado de la comparación es < " +comparacion);
+        comparacion = operando2<=operando1;
+        System.out.println("El resultado de la comparación es <=" +comparacion);
+        comparacion = operando2 == operando1;
+        System.out.println("El resultado de la comparación es = " +comparacion);
+        comparacion = operando2<=operando1;
+        System.out.println("El resultado de la comparación es != " +comparacion);
+        comparacion = operando2<=operando1;
+        // logicas - AND && OR || (siempre se obtiene un boolean)
+        // sueldo mas de 40000 y edad menor de 20
+        // sueldo mas de 40000 y edad más de 20 y edad menos de 30 o pide < 20000
+        operando1= 10;
+        operando2=10;
+        boolean resultadologico= operando1<10 && operando2*2>30; // false
+        resultadologico = operando1<10 || operando2*2>30; // true
+
+    }
+
+
+}
