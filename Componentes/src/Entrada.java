@@ -13,19 +13,27 @@ public class Entrada {
      */
     // TODO esta tarea la dejo pendiente para el lunes
     // mod acceso retorna nombre (args) {funcionalidad}
-
     public static void main (String [] args){
         //variables:
-            //según el dato que guarda: String:palabras, char:letras, int:numeros, double/float: decimales, boolean: true o false
+            //1. según el dato que guarda: String:palabras, char:letras, int:numeros, double/float: decimales, boolean: true o false
+            //2. según la forma de construirse: primitivo - valor (char, int, double), complejo - primera letra en mayúscula como funcionalidad
+                // un primitivo puede ser complejo si le llamo por su nombre completo ejemplo: char como Character
+                // para convertir un complejo en primitivo se escribe en minúscula la primera letra.
+            //3. según su mutabilidad del dato: si cambia o no/ mutables / no mutables (constantes - altura, dni, se le ponte la palabra final, siempre mayusculas).
+            //4. según el scope de la variable: según el metodo o clase.
         //definir una variable: tipo de dato, nombre y si quiere se les asigna un valor: String nombre ="Hello"
+          // para definir una variable compleja es tipo de dato, nombre, new + tipo de dato y forma del valor
         String nombreLegal="Borja";
+        final String DNI ="404703";
         char letra = 'A';
+        Character letraCompleta ='a';
         int edad= 41;
         double altura =1.65;
         boolean acierto = true;
         //float alturaFloat = 1.74f;
         // orders
         System.out.println("Mi nombre es " +nombreLegal);
+        System.out.println("Mi dni es " +DNI);
         System.out.println("La letra de mi DNI es " +letra);
         System.out.println("La letra de mi DNI es " +letra);
         System.out.println("El resultado de la evaluación es " +acierto);
