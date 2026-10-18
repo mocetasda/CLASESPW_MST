@@ -13,6 +13,7 @@ public class ejercicio11 {
         System.out.println("Es mayor que 50 = " + mayor50);
         System.out.println("Es impar = " +!esPar);
 
+        // ejercicio 11b
         System.out.println(" ");
         System.out.println("Introduce cuanto dinero tengo");
         double dinero = lector.nextDouble();
