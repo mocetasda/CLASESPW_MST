@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Entrada {
     public static void main (String[] args){
@@ -21,6 +20,21 @@ public class Entrada {
         System.out.println("Despues de segunda modificacion = " + puntuacion);
         puntuacion =15;
         System.out.println("Puntuacion final = " + puntuacion);
+        System.out.println(" ");
+
+        // ejercicio 3
+        String nombre = "Carlos";
+        int edad = 30;
+        boolean esestudiante =true;
+        double altura = 1.75;
+        char inicial = 'C';
+        System.out.println("Ejercicio 3");
+        System.out.println("Mi es nombre es = " +nombre);
+        System.out.println("Mi edad es  = " +edad);
+        System.out.println("Mi profesión es estudiante = " +esestudiante);
+        System.out.println("Mi inicial es  = " +inicial);
+
+
 
 
     }
