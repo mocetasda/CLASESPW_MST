@@ -68,7 +68,7 @@ public class Entrada {
         comparacion = operando2<=operando1;
         System.out.println("El resultado de la comparación es != " +comparacion);
         comparacion = operando2<=operando1;
-        // logicas - AND && OR || (siempre se obtiene un boolean)
+        // logicas - AND && ( shift 6) OR (alt 1) || (siempre se obtiene un boolean)
         // sueldo mas de 40000 y edad menor de 20
         // sueldo mas de 40000 y edad más de 20 y edad menos de 30 o pide < 20000
         operando1= 10;
@@ -77,6 +77,4 @@ public class Entrada {
         resultadologico = operando1<10 || operando2*2>30; // true
 
     }
-
-
 }
