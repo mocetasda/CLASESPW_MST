@@ -44,9 +44,21 @@ public class Entrada {
         System.out.println(jugador4.correo);
         System.out.println(jugador4.estrella);
         System.out.println(jugador4.habilidad);
+        System.out.println(" ");
 
-
-
+    jugador3.saludar();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    jugador3.recibirimpacto();
+    System.out.println("Despues de la guerra ....");
+    jugador3.saludar();
 
     }
 }

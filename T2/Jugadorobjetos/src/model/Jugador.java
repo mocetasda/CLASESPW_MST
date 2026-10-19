@@ -39,5 +39,24 @@ public class Jugador {
         this.habilidad = habilidad;
         this.correo = correo;
     }
+
+
     // metodos = funcionalidades, que puede hacer el jugador
+    public void saludar (){
+        System.out.println("Hola me llamo " + nombre);
+        System.out.printf("Actualmente tengo %d vidas\n",numeroVidas);
+        System.out.println(" ");
+    }
+
+    public void recibirimpacto (){
+        if (numeroVidas == 0){
+            System.out.println("Estoy muerto");
+        } else if (numeroVidas < 0) {
+            System.out.println("Para, ya estoy muerto");
+            
+        }else {
+            numeroVidas--;
+        }
+
+    }
 }
