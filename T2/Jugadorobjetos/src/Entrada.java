@@ -32,33 +32,33 @@ public class Entrada {
         System.out.println(jugador2.habilidad);
 
         System.out.println(" ");
-        Jugador jugador3 = new Jugador ("Roberto", 8);
+        Jugador jugador3 = new Jugador("Roberto", 8);
         System.out.println(jugador3.nombre);
         System.out.println(jugador3.numeroVidas);
         System.out.println(jugador3.estrella);
         System.out.println(jugador3.habilidad);
 
         System.out.println(" ");
-        Jugador jugador4 = new Jugador ("Joquin", "joasebac@gmail.com");
+        Jugador jugador4 = new Jugador("Joquin", "joasebac@gmail.com");
         System.out.println(jugador4.nombre);
         System.out.println(jugador4.correo);
         System.out.println(jugador4.estrella);
         System.out.println(jugador4.habilidad);
         System.out.println(" ");
 
-    jugador3.saludar();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    jugador3.recibirimpacto();
-    System.out.println("Despues de la guerra ....");
-    jugador3.saludar();
+        jugador3.saludar();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        jugador3.recibirimpacto();
+        System.out.println("Despues de la guerra ....");
+        jugador3.saludar();
 
     }
 }
