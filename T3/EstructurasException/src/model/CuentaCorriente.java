@@ -9,7 +9,7 @@ public class CuentaCorriente {
 
     public CuentaCorriente () {}
 
-    public CuentaCorriente ( String titular, double saldo, int pint) {
+    public CuentaCorriente ( String titular, double saldo, int pin) {
         this.titular = titular;
         this.saldo = saldo;
         this.pin = pin;

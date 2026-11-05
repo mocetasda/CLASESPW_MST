@@ -1,5 +1,6 @@
 package controller;
 
+import Utils.BancoException;
 import model.CuentaCorriente;
 
 public class Banco {
@@ -22,19 +23,41 @@ public class Banco {
     public void darAltaCuenta(CuentaCorriente cuenta) {
         this.cuenta = cuenta;
     }
+    public void retirarSaldo (double saldoretiro, int pin, String titular) throws BancoException{
+        try {
 
-    public void ingresarDinero(double SaldoIngreso, int pin, String titular) throws Exception {
-        // puendo ingresar el dinero -> coinciden el pin y el titular con lo que da
-        // try {
-        if (cuenta.getPin() == pin && cuenta.getTitular().equalsIgnoreCase(titular)) {
-            //ingresar dinero
+        if (cuenta.getTitular().equalsIgnoreCase(titular) && cuenta.getPin() == pin ) {
+            if(saldoretiro> cuenta.getSaldo()){
+                throw new BancoException("Saldo insuficente");
+            }
+
+            //sacaras dinero
+            cuenta.setSaldo(cuenta.getSaldo()-saldoretiro);
+            System.out.println("Ingreso valido");
+            //System.out.println("");
         } else {
-            // aviso que los datos no son datos
+            throw new BancoException("Error de validación");
         }
-        //} catch (NullPointerException e) {
-        // System.out.println("No hay cuenta en el banco dada de alta");
+        }catch (NullPointerException e){
+            System.out.println("No hay cuenta asociada en el banco");
+        }
     }
+    public void ingresarDinero(double SaldoIngreso, int pin, String titular) throws BancoException{
+        // puendo ingresar el dinero -> coinciden el pin y el titular con lo que da
+        try {
+            if (cuenta.getTitular().equalsIgnoreCase(titular) && cuenta.getPin() == pin){
+                //ingresar dinero
+                cuenta.setSaldo(cuenta.getSaldo()+SaldoIngreso);
+                System.out.println("Ingreso válido");
+            }else{
+               throw new BancoException ("Validación errónea");
+            }
+            // aviso que los datos no son datos
+        } catch (NullPointerException e) {
+            System.out.println("No hay cuenta asociada en el banco");
+        }
 
+    }
 
     public CuentaCorriente getCuenta() {
         return cuenta;
@@ -53,3 +76,5 @@ public class Banco {
     }
 
 }
+
+
