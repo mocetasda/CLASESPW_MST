@@ -1,0 +1,120 @@
+package controller;
+
+import model.Alumno;
+import util.NotaException;
+
+public class Colegio {
+
+    //atributos
+    private String nombre;
+    private Alumno [] listaAlumnos;
+
+    //constructores
+    public Colegio (){
+    }
+
+    public Colegio (String nombre){
+        this.nombre = nombre;
+        this.listaAlumnos = new Alumno[5];
+    };
+
+    public Colegio (String nombre, int capacidad){
+        this.nombre = nombre;
+        this.listaAlumnos = new Alumno[capacidad];
+    }
+
+    //metodos
+
+
+
+    //ordenarPornota
+
+    //buscarAlumno
+    //mostrarDatos
+
+    //inscribirAlumno
+        // primero se necesita buscar
+        // cuando puedo inscribir un alumno? -> cuando hay plaza -> esto es cuando alguna plaza es nula
+            // si hay plaza, solo puedes inscribir si el dni del alumno no esstá ya en la lista
+        // si en ninguna de las posiciones del array de alumno hay nulo -> no hay plaza
+    public boolean inscribirAlumno(Alumno alumno) {
+        for (int i = 0; i < listaAlumnos.length; i++) {
+            if (listaAlumnos[i] == null) {
+                //has encontrado plaza
+                if (buscarAlumno(alumno.getDni()) == null) {
+                    //hay algún alumno con este dni
+                    listaAlumnos[i] = alumno;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //expulsarAlumno
+
+    public boolean expulsarAlumno (String dni){
+         Alumno expulsar = buscarAlumno(dni);
+         if (expulsar!=null){
+             //cambiar su espacio a nulo -> cual es su posicion -> for
+             for (int i=0; i< listaAlumnos.length;i++){
+                 if(listaAlumnos[i].getDni().equalsIgnoreCase(dni)){
+                     listaAlumnos[i] = null;
+                     return true;
+                 }
+             }
+         }
+         return false;
+    }
+
+    //calificarAlumno
+    public boolean calificarAlumno (String dni, double nota) throws NotaException{
+        //buscar al alumno
+        // si lo encuentro modificar la nota
+        Alumno encontrado = buscarAlumno(dni);
+        if (encontrado != null){
+            encontrado.setNota(nota);
+            return true;
+        }
+        return false;
+    }
+
+    public Alumno buscarAlumno(String dni) {
+        for (Alumno item : listaAlumnos) {
+            if (item != null && item.getDni().equalsIgnoreCase(dni))
+            return item;
+        }
+        return null;
+    }
+
+
+    //listarAlumnos - muestra los datos de todos los alumnos de la lista
+    public void listaAlumnos () {
+        for (Alumno item : listaAlumnos) {
+            if (item != null) {
+                item.mostrarDatos();
+            }
+        }
+    }
+    public void mostrarDatos (){
+        System.out.println("nombre = " +nombre);
+        System.out.println("Las plazas del colegio son " +listaAlumnos.length);
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Alumno[] getListaAlumnos() {
+        return listaAlumnos;
+    }
+
+    public void setListaAlumnos(Alumno[] listaAlumnos) {
+        this.listaAlumnos = listaAlumnos;
+    }
+}
