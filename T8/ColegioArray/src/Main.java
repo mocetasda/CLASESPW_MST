@@ -2,6 +2,7 @@ import controller.Colegio;
 import model.Alumno;
 import util.NotaException;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -91,21 +92,18 @@ public class Main {
                         // TODO ordenar por notas -> mayor a menor
                         // Arrays.sort(); // un array numeros -> numericamente
                         // un array string -> alfabeticamente
-                        Arrays.sort(inmaculada.getListaAlumnos(), new Comparator<Alumno>() {
+                        //Arrays.sort(inmaculada.getListaAlumnos(), new Comparator<Alumno>() {
                             // TODO este metodo se ejecuta por pares -> Bubble sort
-                            @Override
-                            public int compare(Alumno o1, Alumno o2) {
+                           // @Override
+                            //public int compare(Alumno o1, Alumno o2) {
                                 // TODO solo se retorma 1 o -1 (orden de ordenacion)
-                                return 0;
-                            }
-                        });
-
+                              //  return 0;
+                        inmaculada.ordenarPornota();
+                        System.out.println("Alumnos ordenados por nota");
                     }
 
-
                 }
-
-            }while (opcion!= 7);
+            }while(opcion!= 7);
         }
       }
 }

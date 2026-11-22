@@ -3,6 +3,9 @@ package controller;
 import model.Alumno;
 import util.NotaException;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Colegio {
 
     //atributos
@@ -25,12 +28,6 @@ public class Colegio {
 
     //metodos
 
-
-
-    //ordenarPornota
-
-    //buscarAlumno
-    //mostrarDatos
 
     //inscribirAlumno
         // primero se necesita buscar
@@ -79,6 +76,8 @@ public class Colegio {
         return false;
     }
 
+
+
     public Alumno buscarAlumno(String dni) {
         for (Alumno item : listaAlumnos) {
             if (item != null && item.getDni().equalsIgnoreCase(dni))
@@ -101,6 +100,18 @@ public class Colegio {
         System.out.println("Las plazas del colegio son " +listaAlumnos.length);
     }
 
+    //ordenarPornota
+    public void ordenarPornota (){
+        Arrays.sort(listaAlumnos, new Comparator<Alumno>() {
+            @Override
+            public int compare(Alumno a1, Alumno a2) {
+                if (a1 == null && a2 == null) return 0;
+                if (a1 == null) return 1;
+                if (a2 == null) return -1;
+                return Double.compare(a2.getNota(), a1.getNota());
+            }
+        });
+    }
 
     public String getNombre() {
         return nombre;
